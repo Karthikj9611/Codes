@@ -1,0 +1,51 @@
+import java.util.*;
+public class MadOperation {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter initial value?");
+		int value=sc.nextInt();
+		System.out.println("Enter operation sequence?");
+		String st=sc.next();
+		int v[]=new int[26];
+		
+		for(int i=0;i<st.length();i++)
+		{
+			char ch=st.charAt(i);
+			switch(ch)
+			{
+			case 'A':if(v[ch-65]==0)
+			{
+				System.out.println("Enter value of a");
+				v[ch-65]=sc.nextInt();
+			}
+			value=value+v[ch-65];
+			break;
+			
+			case 'M':if(v[ch-65]==0)
+			{
+				System.out.println("Enter value of m");
+				v[ch-65]=sc.nextInt();
+			}
+			value=value*v[ch-65];
+			break;
+			
+			case 'S':if(v[ch-65]==0)
+			{
+				System.out.println("Enter value of s");
+				v[ch-65]=sc.nextInt();
+			}
+			value=value-v[ch-65];
+			break;
+			
+			case 'D':if(v[ch-65]==0)
+			{
+				System.out.println("Enter value of d");
+				v[ch-65]=sc.nextInt();
+			}
+			value=value/v[ch-65];
+			break;
+			}
+		}
+		System.out.println("The result is: "+value);
+	}
+}
